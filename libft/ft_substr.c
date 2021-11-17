@@ -6,7 +6,7 @@
 /*   By: hyeo <hyeo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 12:12:39 by hyeo              #+#    #+#             */
-/*   Updated: 2021/11/16 14:17:15 by hyeo             ###   ########.fr       */
+/*   Updated: 2021/11/17 16:53:55 by hyeo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	temp = malloc(sizeof(char) * (len + 1));
 	if (temp == NULL)
 		return (NULL);
-	while (s[i] != '\0')
+	while (s[i] != '\0' && j < len && start < ft_strlen(s))
 	{
 		temp[j] = s[i];
 		i++;

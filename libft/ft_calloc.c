@@ -6,7 +6,7 @@
 /*   By: hyeo <hyeo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 13:24:58 by hyeo              #+#    #+#             */
-/*   Updated: 2021/11/16 14:12:11 by hyeo             ###   ########.fr       */
+/*   Updated: 2021/11/17 16:06:18 by hyeo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,11 @@ void	*ft_calloc(size_t count, size_t size)
 	void	*temp;
 	size_t	i;
 
-	temp = malloc(sizeof(count * size));
+	temp = malloc((count * size));
+	if (!temp)
+		return (NULL);
 	i = 0;
-	while (i < count)
+	while (i < count * size)
 	{
 		((unsigned char *)temp)[i] = 0;
 		i++;

@@ -1,28 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*                 	                                  +:+ +:+         +:+     */
 /*   By: hyeo <hyeo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/16 14:05:21 by hyeo              #+#    #+#             */
-/*   Updated: 2021/11/17 12:53:06 by hyeo             ###   ########.fr       */
+/*   Created: 2021/11/16 12:10:39 by hyeo              #+#    #+#             */
+/*   Updated: 2021/11/17 13:04:44 by hyeo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_lstsize(t_list *lst)
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	int		i;
-	t_list	*temp;
-
-	i = 0;
-	temp = lst;
-	while (temp != NULL)
-	{
-		temp = temp->next;
-		i++;
-	}
-	return (i);
+	if (lst == NULL)
+		return ;
+	del(lst->content);
+	free(lst);
 }

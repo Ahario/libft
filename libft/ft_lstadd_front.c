@@ -6,7 +6,7 @@
 /*   By: hyeo <hyeo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 14:04:01 by hyeo              #+#    #+#             */
-/*   Updated: 2021/11/16 14:05:11 by hyeo             ###   ########.fr       */
+/*   Updated: 2021/11/17 12:48:56 by hyeo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,6 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 {
 	if (!(lst) || !(new))
 		return ;
-	new->next = lst;
+	new->next = *lst;
 	*lst = new;
 }

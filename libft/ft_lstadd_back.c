@@ -6,7 +6,7 @@
 /*   By: hyeo <hyeo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 13:26:28 by hyeo              #+#    #+#             */
-/*   Updated: 2021/11/16 14:49:12 by hyeo             ###   ########.fr       */
+/*   Updated: 2021/11/17 13:11:34 by hyeo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	temp = *lst;
 	if (lst == NULL && new == NULL)
 		return ;
-	if (*1st == NULL)
+	if (lst == NULL)
 	{
 		*lst = new;
 		return ;
@@ -28,3 +28,8 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 		temp = temp->next;
 	temp->next = new;
 }
+
+//int main()
+//{
+//	
+//}

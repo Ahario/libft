@@ -6,13 +6,13 @@
 /*   By: hyeo <hyeo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 10:22:19 by hyeo              #+#    #+#             */
-/*   Updated: 2021/11/16 12:10:03 by hyeo             ###   ########.fr       */
+/*   Updated: 2021/11/17 17:04:37 by hyeo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	findlength(int n)
+int	findlength(long long n)
 {
 	int			i;
 	long long	place;
@@ -29,29 +29,34 @@ int	findlength(int n)
 	return (i);
 }
 
+void	turn(int *neg, long long *num, size_t *i)
+{
+	*neg = -1;
+	*num *= -1;
+	*i += 1;
+}
+
 char	*ft_itoa(int n)
 {
-	size_t	i;
-	char	*temp;
-	int		neg;
+	size_t		i;
+	char		*temp;
+	int			neg;
+	long long	num;
 
+	num = n;
 	i = 0;
 	neg = 1;
 	if (n < 0)
-	{
-		neg = -1;
-		n *= -1;
-		i += 1;
-	}
-	i += findlength(n);
+		turn(&neg, &num, &i);
+	i += findlength(num);
 	temp = malloc(sizeof(char) * (i + 1));
 	if (temp == NULL)
 		return (NULL);
 	temp[i] = '\0';
 	while (i > 0)
 	{
-		temp[--i] = (n % 10) + '0';
-		n /= 10;
+		temp[--i] = (num % 10) + '0';
+		num /= 10;
 	}
 	if (neg == -1)
 		temp[0] = '-';
@@ -60,6 +65,6 @@ char	*ft_itoa(int n)
 
 //int main()
 //{
-//	int n = -2147483647;
+//	int n = -2147483648;
 //	printf("%s\n", ft_itoa(n));
 //}

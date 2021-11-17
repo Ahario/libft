@@ -6,7 +6,7 @@
 /*   By: hyeo <hyeo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 14:08:01 by hyeo              #+#    #+#             */
-/*   Updated: 2021/11/16 14:08:09 by hyeo             ###   ########.fr       */
+/*   Updated: 2021/11/17 13:14:39 by hyeo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,8 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	temp = *lst;
 	while (lst != NULL)
 	{
-		lst = lst->next;
 		del(temp->content);
 		free(temp);
-		temp = *lst;
+		temp = temp->next;
 	}
 }

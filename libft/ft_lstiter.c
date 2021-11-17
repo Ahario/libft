@@ -6,13 +6,13 @@
 /*   By: hyeo <hyeo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 12:13:48 by hyeo              #+#    #+#             */
-/*   Updated: 2021/11/16 12:25:57 by hyeo             ###   ########.fr       */
+/*   Updated: 2021/11/17 13:17:09 by hyeo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstiter(t_list *lst, void (*f)(int *))
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	if (lst == NULL || f == NULL)
 		return ;

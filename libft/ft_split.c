@@ -6,29 +6,20 @@
 /*   By: hyeo <hyeo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 09:40:13 by hyeo              #+#    #+#             */
-/*   Updated: 2021/11/16 10:19:23 by hyeo             ###   ########.fr       */
+/*   Updated: 2021/11/17 12:26:17 by hyeo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	check(char str, char *charset)
+int	check(char const str, char charset)
 {
-	int	i;
-	int	j;
-
-	i = 0;
-	j = 0;
-	while (charset[i] != '\0')
-	{
-		if (str == charset[i])
-			return (1);
-		i++;
-	}
+	if (str == charset)
+		return (1);
 	return (0);
 }
 
-int	findsecond(char *str, char *charset)
+int	findsecond(char const *str, char charset)
 {
 	int	i;
 
@@ -38,10 +29,9 @@ int	findsecond(char *str, char *charset)
 	return (i);
 }
 
-int	findfirst(char *str, char *charset)
+int	findfirst(char const *str, char charset)
 {
 	int	i;
-	int	j;
 	int	total;
 
 	total = 0;
@@ -58,7 +48,7 @@ int	findfirst(char *str, char *charset)
 	return (total);
 }
 
-char	*stringcopy(char *str, int j)
+char	*stringcopy(char const *str, int j)
 {
 	int		i;
 	char	*dest;
@@ -76,7 +66,7 @@ char	*stringcopy(char *str, int j)
 	return (dest);
 }
 
-char	**ft_split(char const *s, char *c)
+char	**ft_split(char const *s, char c)
 {
 	int		i;
 	int		j;
@@ -101,3 +91,17 @@ char	**ft_split(char const *s, char *c)
 	dest[total] = 0;
 	return (dest);
 }
+
+//int main()
+//{
+//	char const *s = "hiJmyJnameJisJAllan";
+//	char c  = 'J';
+//	int i = 0;
+//	char **answer = ft_split(s, c);
+//	while (answer[i] != 0)
+//	{
+//		printf("%s\n", answer[i]);
+//		i++;
+//	}
+//	system("leaks a.out");
+//}

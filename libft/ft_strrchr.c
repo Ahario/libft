@@ -6,21 +6,11 @@
 /*   By: hyeo <hyeo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 14:06:45 by hyeo              #+#    #+#             */
-/*   Updated: 2021/11/16 14:21:34 by hyeo             ###   ########.fr       */
+/*   Updated: 2021/11/18 13:17:36 by hyeo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-int	total(const char *s)
-{
-	int	i;
-
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	return (i);
-}
 
 char	*ft_strrchr(const char *s, int c)
 {
@@ -28,7 +18,7 @@ char	*ft_strrchr(const char *s, int c)
 	char	target;
 	char	*src;
 
-	i = total(s);
+	i = ft_strlen(s);
 	target = (unsigned char)c;
 	src = (char *)s;
 	while (i > 0)

@@ -6,7 +6,7 @@
 /*   By: hyeo <hyeo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 09:40:13 by hyeo              #+#    #+#             */
-/*   Updated: 2021/11/17 12:26:17 by hyeo             ###   ########.fr       */
+/*   Updated: 2021/11/18 14:16:50 by hyeo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,8 @@ char	**ft_split(char const *s, char c)
 
 	i = 0;
 	j = 0;
+	if (!s)
+		return (NULL);
 	total = findfirst(s, c);
 	dest = (char **)malloc(sizeof(char *) * total + 1);
 	if (!dest)

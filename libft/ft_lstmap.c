@@ -6,7 +6,7 @@
 /*   By: hyeo <hyeo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 12:46:09 by hyeo              #+#    #+#             */
-/*   Updated: 2021/11/17 17:05:41 by hyeo             ###   ########.fr       */
+/*   Updated: 2021/11/18 17:01:04 by hyeo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,17 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new;
 	t_list	*source;
+	void	*cont;	
 
 	if (lst == NULL || f == NULL)
 		return (NULL);
+	new = 0;
+	source = 0;
+	cont = 0;
 	while (lst != NULL)
 	{
-		source = ft_lstnew(f(lst->content));
+		cont = f(lst->content);
+		source = ft_lstnew(cont);
 		if (source == NULL)
 		{
 			ft_lstclear(&new, del);

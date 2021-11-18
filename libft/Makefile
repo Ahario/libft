@@ -6,7 +6,7 @@
 #    By: hyeo <marvin@42.fr>                        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/17 12:29:08 by hyeo              #+#    #+#              #
-#    Updated: 2021/11/17 17:00:48 by hyeo             ###   ########.fr        #
+#    Updated: 2021/11/18 17:02:53 by hyeo             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,8 +27,8 @@ ${NAME} : ${OBJS}
 
 all:  ${NAME}
 
-bonus : ${BONSOBJS}
-		ar -rc ${BONSOBJS}
+bonus : ${OBJS} ${BONSOBJS}
+		ar -rc ${NAME} ${OBJS} ${BONSOBJS}
 
 clean:
 	 rm -f ${OBJS}

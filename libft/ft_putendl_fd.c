@@ -6,7 +6,7 @@
 /*   By: hyeo <hyeo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 14:08:25 by hyeo              #+#    #+#             */
-/*   Updated: 2021/11/17 16:19:40 by hyeo             ###   ########.fr       */
+/*   Updated: 2021/11/18 17:58:11 by hyeo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,8 @@
 
 void	ft_putendl_fd(char *s, int fd)
 {
-	size_t	i;
-
-	i = 0;
 	if (!s || fd < 0)
 		return ;
-	while (s[i] != '0')
-	{
-		write(fd, &s[i], 1);
-		write(fd, "\n", 1);
-		i++;
-	}
+	write(fd, s, ft_strlen(s));
+	write(fd, "\n", 1);
 }

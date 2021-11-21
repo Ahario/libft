@@ -6,7 +6,7 @@
 #    By: hyeo <marvin@42.fr>                        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/17 12:29:08 by hyeo              #+#    #+#              #
-#    Updated: 2021/11/19 11:41:24 by hyeo             ###   ########.fr        #
+#    Updated: 2021/11/21 11:42:10 by hyeo             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,4 +37,6 @@ fclean :
 	rm -f ${OBJS}
 	rm -f ${NAME}
 
-re : fclean all clean 
+re : fclean all clean
+
+.Phony: all bonus clean fclean re

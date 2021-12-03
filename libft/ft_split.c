@@ -6,20 +6,20 @@
 /*   By: hyeo <hyeo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 09:40:13 by hyeo              #+#    #+#             */
-/*   Updated: 2021/11/18 14:16:50 by hyeo             ###   ########.fr       */
+/*   Updated: 2021/12/02 19:46:21 by hyeo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	check(char const str, char charset)
+static int	check(char const str, char charset)
 {
 	if (str == charset)
 		return (1);
 	return (0);
 }
 
-int	findsecond(char const *str, char charset)
+static int	findsecond(char const *str, char charset)
 {
 	int	i;
 
@@ -29,7 +29,7 @@ int	findsecond(char const *str, char charset)
 	return (i);
 }
 
-int	findfirst(char const *str, char charset)
+static int	findfirst(char const *str, char charset)
 {
 	int	i;
 	int	total;
@@ -48,62 +48,44 @@ int	findfirst(char const *str, char charset)
 	return (total);
 }
 
-char	*stringcopy(char const *str, int j)
+static char	**malloc_free(char **all)
 {
-	int		i;
-	char	*dest;
+	int	i;
 
 	i = 0;
-	dest = (char *)malloc(sizeof(char) * j + 1);
-	if (!dest)
-		return (0);
-	while (i != j && str[i] != '\0')
+	while (all[i])
 	{
-		dest[i] = str[i];
+		free(all[i]);
 		i++;
 	}
-	dest[i] = '\0';
-	return (dest);
+	free(all);
+	return (NULL);
 }
 
 char	**ft_split(char const *s, char c)
 {
 	int		i;
-	int		j;
 	int		total;
 	char	**dest;
 
 	i = 0;
-	j = 0;
 	if (!s)
 		return (NULL);
 	total = findfirst(s, c);
-	dest = (char **)malloc(sizeof(char *) * total + 1);
+	dest = (char **)malloc(sizeof(char *) * (total + 1));
 	if (!dest)
 		return (0);
 	while (i < total)
 	{
 		while (check(*s, c))
 			s++;
-		j = findsecond(s, c);
-		dest[i] = stringcopy(s, j);
-		s += j;
+		dest[i] = malloc(sizeof(char) * (findsecond(s, c) + 1));
+		if (!dest[i])
+			return (malloc_free(dest));
+		ft_strlcpy(dest[i], s, findsecond(s, c) + 1);
+		s += findsecond(s, c);
 		i++;
 	}
 	dest[total] = 0;
 	return (dest);
 }
-
-//int main()
-//{
-//	char const *s = "hiJmyJnameJisJAllan";
-//	char c  = 'J';
-//	int i = 0;
-//	char **answer = ft_split(s, c);
-//	while (answer[i] != 0)
-//	{
-//		printf("%s\n", answer[i]);
-//		i++;
-//	}
-//	system("leaks a.out");
-//}

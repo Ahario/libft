@@ -6,7 +6,7 @@
 /*   By: hyeo <hyeo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 14:09:20 by hyeo              #+#    #+#             */
-/*   Updated: 2021/11/18 18:00:02 by hyeo             ###   ########.fr       */
+/*   Updated: 2021/12/02 19:51:24 by hyeo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 			j--;
 	}
 	temp = malloc(sizeof(char) * (j - i + 1));
-	if (temp != NULL)
-		ft_strlcpy(temp, &s1[i], j - i + 1);
+	if (!temp)
+		return (NULL);
+	ft_strlcpy(temp, &s1[i], j - i + 1);
 	return (temp);
 }
 //int main()

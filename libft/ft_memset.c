@@ -6,7 +6,7 @@
 /*   By: hyeo <hyeo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 13:27:53 by hyeo              #+#    #+#             */
-/*   Updated: 2021/11/19 13:07:34 by hyeo             ###   ########.fr       */
+/*   Updated: 2021/12/03 14:02:42 by hyeo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,3 @@ void	*ft_memset(void *b, int c, size_t len)
 	}
 	return (dest);
 }
-//int main()
-//{
-//	unsigned char b[10] = "abcdefghi";
-//	int c = 41;
-//	size_t len = 5;
-//	printf("%s", ft_memset(b, c, len));
-//}

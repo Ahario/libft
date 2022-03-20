@@ -6,7 +6,7 @@
 /*   By: hyeo <hyeo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 12:11:14 by hyeo              #+#    #+#             */
-/*   Updated: 2021/11/16 12:11:27 by hyeo             ###   ########.fr       */
+/*   Updated: 2021/12/03 14:03:01 by hyeo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,3 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	}
 	return (NULL);
 }
-
-//int main()
-//{
-//	const char *s = "abcdef";
-//	int c = 99;
-//	size_t n = 6;
-//	printf("%s\n", ft_memchr(s, c, n));
-//}

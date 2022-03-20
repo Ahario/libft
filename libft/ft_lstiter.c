@@ -6,7 +6,7 @@
 /*   By: hyeo <hyeo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 12:13:48 by hyeo              #+#    #+#             */
-/*   Updated: 2021/11/19 12:13:48 by hyeo             ###   ########.fr       */
+/*   Updated: 2021/12/03 14:05:52 by hyeo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,17 +22,3 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 		lst = lst->next;
 	}
 }
-
-//void	f(int *cont)
-//{
-//	cont = 345;
-//}
-
-//int main()
-//{
-//	t_list	*hi = malloc(sizeof(t_list) * 2);
-//	hi->content = 42;
-//	hi->next = NULL;
-//	ft_lstiter(hi, f);
-//	printf("%d", hi->content);
-//}

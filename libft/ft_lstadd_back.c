@@ -6,7 +6,7 @@
 /*   By: hyeo <hyeo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 13:26:28 by hyeo              #+#    #+#             */
-/*   Updated: 2021/11/18 10:52:37 by hyeo             ###   ########.fr       */
+/*   Updated: 2021/12/03 14:06:06 by hyeo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,3 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 		temp = temp->next;
 	temp->next = new;
 }
-
-//int main()
-//{
-//	
-//}
